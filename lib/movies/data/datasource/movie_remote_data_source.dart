@@ -7,9 +7,9 @@ import 'package:movies/movies/data/models/movie_model.dart';
 abstract class BaseMovieRemoteDataSource {
   Future<List<MovieModel>> getNowPlayingMovies();
 
-  Future<List<MovieModel>> getNowPopularMovies();
+  Future<List<MovieModel>> getPopularMovies();
 
-  Future<List<MovieModel>> getNowTopRatedMovies();
+  Future<List<MovieModel>> getTopRatedMovies();
 }
 
 class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
@@ -26,7 +26,7 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
   }
 
   @override
-  Future<List<MovieModel>> getNowPopularMovies() async {
+  Future<List<MovieModel>> getPopularMovies() async {
     final response = await Dio().get(AppConstances.popularMoviesPath);
     if (response.statusCode == 200) {
       return List<MovieModel>.from((response.data["results"] as List)
@@ -38,7 +38,7 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
   }
 
   @override
-  Future<List<MovieModel>> getNowTopRatedMovies() async {
+  Future<List<MovieModel>> getTopRatedMovies() async {
     final response = await Dio().get(AppConstances.topRatedMoviesPath);
     if (response.statusCode == 200) {
       return List<MovieModel>.from((response.data["results"] as List)

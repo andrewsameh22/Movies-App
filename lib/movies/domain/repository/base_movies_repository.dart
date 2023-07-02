@@ -1,9 +1,13 @@
+import 'package:dartz/dartz.dart';
+import 'package:movies/movies/data/datasource/movie_remote_data_source.dart';
 import 'package:movies/movies/domain/entities/movie.dart';
 
+import '../../../core/error/exceptions.dart';
+
 abstract class BaseMoviesRepository {
-  Future<List<Movie>> getNowPlayingMovies();
+  Future<Either<List<Movie>, ServerException>> getNowPlayingMovies();
 
-  Future<List<Movie>> getPopularMovies();
+  Future<Either<List<Movie>, ServerException>> getPopularMovies();
 
-  Future<List<Movie>> getTopRatedMovies();
+  Future<Either<List<Movie>, ServerException>> getTopRatedMovies();
 }
