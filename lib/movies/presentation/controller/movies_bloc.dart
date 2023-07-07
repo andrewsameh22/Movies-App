@@ -10,6 +10,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
     on<GetNowPlayingMoviesEvent>((event, emit) async {
       final result = await getNowPlayingMoviesUseCase.execute();
       emit(MoviesState(nowPlayingState: RequestState.loaded));
+      print(result);
       result.fold(
           (l) => emit(MoviesState(
               nowPlayingState: RequestState.error,
