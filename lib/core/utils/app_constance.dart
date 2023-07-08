@@ -7,4 +7,6 @@ class AppConstances {
       "$baseurl/movie/popular?api_key=$apiKey";
   static const String topRatedMoviesPath =
       "$baseurl/movie/top_rated?api_key=$apiKey";
+  static const String baseImageUrl = 'https://image.tmdb.org/t/p/w500';
+  static String imageUrl(String path) => '$baseImageUrl$path';
 }
