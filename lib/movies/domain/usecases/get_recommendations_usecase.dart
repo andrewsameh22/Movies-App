@@ -1,10 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:movies/core/error/failure.dart';
-import 'package:movies/core/usecase/base_usecase.dart';
 
 import 'package:movies/movies/domain/entities/recommendation.dart';
 import 'package:movies/movies/domain/repository/base_movies_repository.dart';
+
+import '../../../core/usecase/base_usecase.dart';
 
 class GetRecommendationUseCase
     extends BaseUseCase<List<Recommendation>, RecommendationParameters> {
