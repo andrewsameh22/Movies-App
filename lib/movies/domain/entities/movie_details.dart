@@ -9,7 +9,7 @@ class MovieDetails extends Equatable {
   final String release_date;
   final int runtime;
   final String title;
-  final String voteAverage;
+  final double voteAverage;
 
   MovieDetails({
     required this.backdropPath,

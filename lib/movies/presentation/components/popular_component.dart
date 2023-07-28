@@ -9,6 +9,8 @@ import 'package:movies/movies/presentation/controller/movies_bloc.dart';
 import 'package:movies/movies/presentation/controller/movies_state.dart';
 import 'package:shimmer/shimmer.dart';
 
+import '../screens/movie_detail_screen.dart';
+
 class PopularComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -40,7 +42,12 @@ class PopularComponent extends StatelessWidget {
                       padding: const EdgeInsets.only(right: 8.0),
                       child: InkWell(
                         onTap: () {
-                          /// TODO : NAVIGATE TO  MOVIE DETAILS
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext) =>
+                                    MovieDetailScreen(id: movie.id),
+                              ));
                         },
                         child: ClipRRect(
                           borderRadius:

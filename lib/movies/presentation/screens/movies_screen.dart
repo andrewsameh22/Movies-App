@@ -1,12 +1,8 @@
-import 'package:animate_do/animate_do.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movies/core/services/services_locator.dart';
-import 'package:movies/core/utils/app_constance.dart';
-import 'package:movies/core/utils/dummy.dart';
+import 'package:movies/core/utils/app_strings.dart';
 import 'package:movies/movies/presentation/components/now_playing_component.dart';
 import 'package:movies/movies/presentation/components/popular_component.dart';
 import 'package:movies/movies/presentation/components/top_rated_component.dart';
@@ -38,7 +34,7 @@ class MoviesScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Popular",
+                      AppStrings.popular,
                       style: GoogleFonts.poppins(
                         fontSize: 19,
                         color: Colors.white,
@@ -55,7 +51,7 @@ class MoviesScreen extends StatelessWidget {
                         child: Row(
                           children: const [
                             Text(
-                              'See More',
+                              AppStrings.seeMore,
                               style: TextStyle(
                                 color: Colors.white,
                               ),
@@ -84,7 +80,7 @@ class MoviesScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Top Rated",
+                      AppStrings.topRated,
                       style: GoogleFonts.poppins(
                         fontSize: 19,
                         color: Colors.white,
@@ -101,7 +97,7 @@ class MoviesScreen extends StatelessWidget {
                         child: Row(
                           children: const [
                             Text(
-                              'See More',
+                              AppStrings.seeMore,
                               style: TextStyle(
                                 color: Colors.white,
                               ),

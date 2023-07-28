@@ -4,11 +4,12 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies/core/utils/app_constance.dart';
-import 'package:movies/core/utils/dummy.dart';
 import 'package:movies/core/utils/enums.dart';
 import 'package:movies/movies/presentation/controller/movies_bloc.dart';
 import 'package:movies/movies/presentation/controller/movies_state.dart';
 import 'package:shimmer/shimmer.dart';
+
+import '../screens/movie_detail_screen.dart';
 
 class TopRatedComponent extends StatelessWidget {
   @override
@@ -17,7 +18,7 @@ class TopRatedComponent extends StatelessWidget {
       buildWhen: (previous, current) =>
           previous.topRatedState != current.topRatedState,
       builder: (context, state) {
-        switch (state.popularState) {
+        switch (state.topRatedState) {
           case RequestState.loading:
             return const SizedBox(
               height: 170.0,
@@ -41,7 +42,12 @@ class TopRatedComponent extends StatelessWidget {
                       padding: const EdgeInsets.only(right: 8.0),
                       child: InkWell(
                         onTap: () {
-                          /// TODO : NAVIGATE TO  MOVIE DETAILS
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext) =>
+                                    MovieDetailScreen(id: movie.id),
+                              ));
                         },
                         child: ClipRRect(
                           borderRadius:
